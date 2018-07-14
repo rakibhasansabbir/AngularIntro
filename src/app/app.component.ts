@@ -8,7 +8,18 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  text = 'app'; 
-
-
-  }
+  records = [
+    {
+      name: "Tamim Iqbal",
+      online: true
+    },
+    {
+      name: "Shakib All Hassan",
+      online: false
+    },
+    {
+      name: "Musfiqur Rahim",
+      online: true
+    }    
+  ]
+}
