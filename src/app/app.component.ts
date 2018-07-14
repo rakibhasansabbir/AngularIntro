@@ -1,6 +1,10 @@
 import { RecordsService } from './records.service';
 import { Component } from '@angular/core';
 
+interface myData{
+  obj: Object
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,13 +12,16 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  records = {}
+  records = []
 
   constructor(private myFirstService : RecordsService){
 
   }
 
   ngOnInit(){
-    this.records = this.myFirstService.getData();
+    this.myFirstService.getData().subscribe(data => {
+      this.records = data.obj
+      
+    })
   }
 }
