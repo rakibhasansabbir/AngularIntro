@@ -1,4 +1,4 @@
-import { HelloComponent } from './hello/hello.component';
+import { RecordsService } from './records.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,18 +8,13 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  records = [
-    {
-      name: "Tamim Iqbal",
-      online: true
-    },
-    {
-      name: "Shakib All Hassan",
-      online: false
-    },
-    {
-      name: "Musfiqur Rahim",
-      online: true
-    }    
-  ]
+  records = {}
+
+  constructor(private myFirstService : RecordsService){
+
+  }
+
+  ngOnInit(){
+    this.records = this.myFirstService.getData();
+  }
 }
