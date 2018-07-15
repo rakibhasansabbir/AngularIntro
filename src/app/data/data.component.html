@@ -1,0 +1,18 @@
+<table>
+  <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Online?</th>
+  </tr>
+  <tr *ngFor="let record of records; let i = index;
+   let evenRecord = even; let oldRecord = odd;
+    let firstRecord = first;let lastRecord = last;" 
+    [ngClass]="{odd: oldRecord, even: evenRecord,
+       first: firstRecord, last: lastRecord}">
+      <td>{{i+1}}</td>
+      <td>{{record.name}}</td>
+      <td>{{record.online}}</td>
+  </tr>
+</table>
+
+<a routerLink="/">Go Back..</a>

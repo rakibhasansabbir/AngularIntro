@@ -1,4 +1,4 @@
-import { RecordsService } from './records.service';
+
 import { Component } from '@angular/core';
 
 interface myData{
@@ -14,14 +14,11 @@ interface myData{
 export class AppComponent {
   records = []
 
-  constructor(private myFirstService : RecordsService){
+  constructor(){
 
   }
 
   ngOnInit(){
-    this.myFirstService.getData().subscribe(data => {
-      this.records = data.obj
-      
-    })
+    
   }
 }
