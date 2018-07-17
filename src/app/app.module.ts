@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { AuthGuard } from './auth.guard';
 import { HttpClientModule } from '@angular/common/http'
 import { RecordsService } from './records.service';
@@ -9,6 +10,7 @@ import { DataComponent } from './data/data.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component'
+
 
 
 @NgModule({
@@ -41,7 +43,7 @@ import { AdminComponent } from './admin/admin.component'
       ]
     )
   ],
-  providers: [RecordsService,AuthGuard],
+  providers: [RecordsService, UserService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
