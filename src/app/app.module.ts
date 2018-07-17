@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { HttpClientModule } from '@angular/common/http'
 import { RecordsService } from './records.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,7 +30,8 @@ import { AdminComponent } from './admin/admin.component'
         },
         {
           path: 'admin',
-          component: AdminComponent
+          component: AdminComponent,
+          canActivate: [AuthGuard]
         },
         {
           path: '',
@@ -39,7 +41,7 @@ import { AdminComponent } from './admin/admin.component'
       ]
     )
   ],
-  providers: [RecordsService],
+  providers: [RecordsService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
